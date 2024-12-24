@@ -1,0 +1,128 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/23 23:52:06 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/12/24 02:31:21 by ichaabi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "phone_Book.hpp"
+
+PhoneBook::PhoneBook() : count(0) {}
+
+void	PhoneBook::addContact()
+{
+	std::string input;
+	int index = count % 8;
+
+	while (true)
+	{
+		std::cout << "Enter First Name: ";
+		std::getline(std::cin, input);
+		if (!input.empty())
+		{
+			contacts[index].setFirstName(input);
+			break;
+		}
+		std::cout << "FIRST NAME CANNOT BE EMPTY !" << std::endl;
+	}
+
+	while (true)
+	{
+		std::cout << "Enter Last Name: ";
+		std::getline(std::cin, input);
+		if (!input.empty())
+		{
+			contacts[index].setLastName(input);
+			break ;
+		}
+		std::cout << "LAST NAME CANNOT BE EMPTY !" << std::endl;
+	}
+
+	while (true)
+	{
+		std::cout << "Enter Nick Name: ";
+		std::getline(std::cin, input);
+		if (!input.empty())
+		{
+			contacts[index].setNickName(input);
+			break;
+		}
+		std::cout << "NICK NAME CANNOT BE EMPTY !" << std::endl;
+	}
+
+	while (true)
+	{
+		std::cout << "Enter Phone Number: ";
+		std::getline(std::cin, input);
+		if (!input.empty())
+		{
+			contacts[index].setPhoneNumber(input);
+			break;
+		}
+		std::cout << "PHONE NUMBER CANNOT BE EMPTY !" << std::endl;
+	}
+
+	while (true)
+	{
+		std::cout << "Enter Darkest Secret: ";
+		std::getline(std::cin, input);
+		if (!input.empty())
+		{
+			contacts[index].setDarkestSecret(input);
+			break;
+		}
+		std::cout << "DARKEST SECRET CANNOT BE EMPTY !" << std::endl;
+	}
+	if (count < 8)
+		count++;
+}
+
+std::string PhoneBook::formatage(std::string str) const
+{
+	if (str.length() > 10)
+		return (str.substr(0, 9) + ".");
+	return (str);
+}
+
+void	PhoneBook::searchContact()
+{
+	if (count == 0)
+	{
+		std::cout << "No Contacts In PhoneBook" << std::endl;
+		return ;
+	}
+
+	std::cout << "|----------|----------|----------|----------|" << std::endl;
+	std::cout << "|  Index   |First Name| Last Name| Nickname |" << std::endl;
+	std::cout << "|----------|----------|----------|----------|" <<std::endl;
+
+	for (int i = 0; i < count; i++)
+	{
+		std::cout << "|" << std::setw(10) << i << "|";
+		std::cout << std::setw(10) << formatage(contacts[i].getFirstName()) << "|";
+		std::cout << std::setw(10) << formatage(contacts[i].getLastName()) << "|";
+		std::cout << std::setw(10) << formatage(contacts[i].getNickName()) << "|" << std::endl;
+		std::cout << "|----------|----------|----------|----------|" << std::endl;
+	}
+	//enter index to display(darkest / phone number)
+	std::cout << "Enter Index To Display" << std::endl;
+	int index;
+	std::cin >> index;
+	std::cin.ignore();//ignorer le /n
+
+	if (index >= 0 && index < count)
+	{
+		std::cout << "First Name: " << contacts[index].getFirstName() << std::endl;
+		std::cout << "Last Name: " << contacts[index].getLastName() << std::endl;
+		std::cout << "Nick Name: " << contacts[index].getNickName() << std::endl;
+		std::cout << "Phone Number: " << contacts[index].getPhoneNumber() << std::endl;
+		std::cout << "Darkest Secret: " << contacts[index].getDarkestSecret() << std::endl;
+	}
+	else
+		std::cout << "Invalid Index!" << std::endl;
+}
