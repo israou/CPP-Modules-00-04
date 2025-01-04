@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   phone_Book.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:52:06 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/12/24 02:31:21 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/04 21:39:52 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,18 @@ void	PhoneBook::addContact()
 	{
 		std::cout << "Enter Phone Number: ";
 		std::getline(std::cin, input);
-		if (!input.empty())
+	if (!input.empty())
+	{
+		if (is_only_digits(input))
 		{
 			contacts[index].setPhoneNumber(input);
 			break;
 		}
-		std::cout << "PHONE NUMBER CANNOT BE EMPTY !" << std::endl;
+		std::cout << "PHONE NUMBER MUST CONTAIN ONLY DIGITS !" << std::endl;
+		continue;
 	}
+	std::cout << "PHONE NUMBER CANNOT BE EMPTY !" << std::endl;
+}
 
 	while (true)
 	{
@@ -111,10 +116,26 @@ void	PhoneBook::searchContact()
 	}
 	//enter index to display(darkest / phone number)
 	std::cout << "Enter Index To Display" << std::endl;
-	int index;
-	std::cin >> index;
-	std::cin.ignore();//ignorer le /n
+	std::string input;
+	std::getline(std::cin, input);
 
+	bool	valid = true;
+	for (size_t i = 0; i < input.length(); i++)
+	{
+		if (!std::isdigit(input[i]))
+		{
+			valid = false;
+			break ;
+		}
+	}
+	int index;
+	if (valid && !input.empty())
+		index = std::atoi(input.c_str());
+	else
+	{
+		std::cout << "INVALID INDEX !" << std::endl;
+		return ;
+	}
 	if (index >= 0 && index < count)
 	{
 		std::cout << "First Name: " << contacts[index].getFirstName() << std::endl;

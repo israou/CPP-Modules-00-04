@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:14:48 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/12/24 02:25:35 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/04 21:19:42 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ class PhoneBook {
 
 };
 
+bool	is_only_digits(const std::string &str);
 #endif
