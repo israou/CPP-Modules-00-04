@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/04 21:52:49 by ichaabi           #+#    #+#             */
+/*   Updated: 2025/01/06 18:00:12 by ichaabi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp"
 #include <iostream>
+#include <iomanip>
 #include <ctime>
 
 int Account::_nbAccounts = 0;
@@ -7,7 +20,7 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-Account::Account(int initial_deposit) :
+Account::Account(int initial_deposit) : //constructeur appelé pour chaque montant dans le tableau amounts[]
 _accountIndex(_nbAccounts),
 _amount(initial_deposit),
 _nbDeposits(0),
@@ -21,9 +34,26 @@ _nbWithdrawals(0)
 	std::cout << "created" << std::endl;
 }
 
-void Account::_displayTimestamp(void)
+void	Account::_displayTimestamp(void)
 {
-	std::cout << "[19920104_091532] ";
+	std::time_t now = std::time(nullptr);//obtient le timestamp actuel(secondes depuis 1970)
+	std::tm* ltm = std::localtime(&now);//convertit timestamp en structure tm avec y/m/d/h
+// structure tm contient :
+// tm_year (années depuis 1900)
+// tm_mon (0-11 pour mois)
+// tm_mday (1-31 pour jour)
+// tm_hour (0-23)
+// tm_min (0-59)
+// tm_sec (0-59)
+	std::cout << "["
+			 << 1900 + ltm->tm_year //+1900 pour avoir l annee complete
+			 << std::setfill('0') << std::setw(2) << 1 + ltm->tm_mon
+			 << std::setfill('0') << std::setw(2) << ltm->tm_mday
+			 << "_"
+			 << std::setfill('0') << std::setw(2) << ltm->tm_hour
+			 << std::setfill('0') << std::setw(2) << ltm->tm_min
+			 << std::setfill('0') << std::setw(2) << ltm->tm_sec
+			 << "] ";
 }
 //les getters statiques pour les info
 

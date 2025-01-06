@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:52:06 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/04 21:39:52 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/05 19:59:01 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ void	PhoneBook::searchContact()
 	}
 	int index;
 	if (valid && !input.empty())
-		index = std::atoi(input.c_str());
+		index = std::atoi(input.c_str());//atoi:const char * en int/ c_str: str en const char *
 	else
 	{
 		std::cout << "INVALID INDEX !" << std::endl;
@@ -147,3 +147,12 @@ void	PhoneBook::searchContact()
 	else
 		std::cout << "Invalid Index!" << std::endl;
 }
+
+
+// std::string input = "123";     // Une chaîne de caractères
+
+// input.c_str()                  // 1️⃣ Convertit std::string en const char*
+// std::atoi(input.c_str())      // 2️⃣ Convertit const char* en int
+
+// isdigit() vérifie un seul caractère à la fois
+// alors que is_only_digits() vérifie toute une chaîne de caractères

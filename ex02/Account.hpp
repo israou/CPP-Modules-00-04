@@ -26,7 +26,7 @@ public:
 	static int	getNbAccounts( void );
 	static int	getTotalAmount( void );
 	static int	getNbDeposits( void );
-	static int	getNbWithdrawals( void );
+	static int	getNbWithdrawals( void );//retrait
 	static void	displayAccountsInfos( void );
 
 	Account( int initial_deposit );
