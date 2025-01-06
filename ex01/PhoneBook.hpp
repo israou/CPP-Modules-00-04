@@ -6,12 +6,12 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:14:48 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/04 21:19:42 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/06 21:31:25 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONE_BOOK_HPP
-# define PHONE_BOOK_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 
 #include "contact.hpp"

@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 21:52:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/06 18:00:12 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/06 18:51:38 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,3 +145,10 @@ Account::~Account(void)
 				<< "closed" << std::endl;
 }
 
+
+// std::time_t : Type de donnée qui représente un timestamp (nombre de secondes)
+// std::tm : Structure qui contient date/heure décomposée
+// * : Pointeur vers cette structure
+// ltm : Nom de la variable pointeur
+// std::localtime() : Convertit timestamp en temps local
+// &now : Adresse de la variable now

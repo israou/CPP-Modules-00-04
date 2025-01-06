@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phone_Book.cpp                                     :+:      :+:    :+:   */
+/*   phoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:52:06 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/05 19:59:01 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/06 22:13:37 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phone_Book.hpp"
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() : count(0) {}
 
@@ -22,7 +22,11 @@ void	PhoneBook::addContact()
 	while (true)
 	{
 		std::cout << "Enter First Name: ";
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << "ERROR: INPUT STREAM CLOSED" << std::endl;
+			return ;
+		}
 		if (!input.empty())
 		{
 			contacts[index].setFirstName(input);
@@ -34,7 +38,11 @@ void	PhoneBook::addContact()
 	while (true)
 	{
 		std::cout << "Enter Last Name: ";
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << "ERROR: INPUT STREAM CLOSED" << std::endl;
+			return ;
+		}
 		if (!input.empty())
 		{
 			contacts[index].setLastName(input);
@@ -46,7 +54,11 @@ void	PhoneBook::addContact()
 	while (true)
 	{
 		std::cout << "Enter Nick Name: ";
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << "ERROR: INPUT STREAM CLOSED" << std::endl;
+			return ;
+		}
 		if (!input.empty())
 		{
 			contacts[index].setNickName(input);
@@ -58,7 +70,11 @@ void	PhoneBook::addContact()
 	while (true)
 	{
 		std::cout << "Enter Phone Number: ";
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << "ERROR: INPUT STREAM CLOSED" << std::endl;
+			return ;
+		}
 	if (!input.empty())
 	{
 		if (is_only_digits(input))
@@ -75,7 +91,11 @@ void	PhoneBook::addContact()
 	while (true)
 	{
 		std::cout << "Enter Darkest Secret: ";
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << "ERROR: INPUT STREAM CLOSED" << std::endl;
+			return ;
+		}
 		if (!input.empty())
 		{
 			contacts[index].setDarkestSecret(input);
@@ -117,15 +137,26 @@ void	PhoneBook::searchContact()
 	//enter index to display(darkest / phone number)
 	std::cout << "Enter Index To Display" << std::endl;
 	std::string input;
-	std::getline(std::cin, input);
+	if (!std::getline(std::cin, input))
+	{
+		std::cout << "ERROR: INPUT STREAM CLOSED" <<std::endl;
+		return ;
+	}
 
 	bool	valid = true;
-	for (size_t i = 0; i < input.length(); i++)
+	if (input.length() > 10) // Vérifie d'abord la longueur
 	{
-		if (!std::isdigit(input[i]))
+		valid = false;
+	}
+	else // Si la longueur est OK, vérifie les digits
+	{
+		for (size_t i = 0; i < input.length(); i++)
 		{
-			valid = false;
-			break ;
+			if (!std::isdigit(input[i]))
+			{
+				valid = false;
+				break;
+			}
 		}
 	}
 	int index;
