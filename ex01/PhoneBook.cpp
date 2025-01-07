@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phoneBook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:52:06 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/06 22:13:37 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/07 19:31:25 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,6 @@ void	PhoneBook::searchContact()
 		std::cout << std::setw(10) << formatage(contacts[i].getNickName()) << "|" << std::endl;
 		std::cout << "|----------|----------|----------|----------|" << std::endl;
 	}
-	//enter index to display(darkest / phone number)
 	std::cout << "Enter Index To Display" << std::endl;
 	std::string input;
 	if (!std::getline(std::cin, input))
@@ -144,11 +143,11 @@ void	PhoneBook::searchContact()
 	}
 
 	bool	valid = true;
-	if (input.length() > 10) // Vérifie d'abord la longueur
+	if (input.length() > 10)
 	{
 		valid = false;
 	}
-	else // Si la longueur est OK, vérifie les digits
+	else
 	{
 		for (size_t i = 0; i < input.length(); i++)
 		{
@@ -161,7 +160,7 @@ void	PhoneBook::searchContact()
 	}
 	int index;
 	if (valid && !input.empty())
-		index = std::atoi(input.c_str());//atoi:const char * en int/ c_str: str en const char *
+		index = std::atoi(input.c_str());
 	else
 	{
 		std::cout << "INVALID INDEX !" << std::endl;
@@ -178,12 +177,3 @@ void	PhoneBook::searchContact()
 	else
 		std::cout << "Invalid Index!" << std::endl;
 }
-
-
-// std::string input = "123";     // Une chaîne de caractères
-
-// input.c_str()                  // 1️⃣ Convertit std::string en const char*
-// std::atoi(input.c_str())      // 2️⃣ Convertit const char* en int
-
-// isdigit() vérifie un seul caractère à la fois
-// alors que is_only_digits() vérifie toute une chaîne de caractères

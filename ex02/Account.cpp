@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 21:52:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/06 18:51:38 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/07 19:58:55 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-Account::Account(int initial_deposit) : //constructeur appelé pour chaque montant dans le tableau amounts[]
+Account::Account(int initial_deposit) :
 _accountIndex(_nbAccounts),
 _amount(initial_deposit),
 _nbDeposits(0),
@@ -55,7 +55,6 @@ void	Account::_displayTimestamp(void)
 			 << std::setfill('0') << std::setw(2) << ltm->tm_sec
 			 << "] ";
 }
-//les getters statiques pour les info
 
 int Account::getNbAccounts(void)
 {
@@ -101,10 +100,10 @@ void Account::makeDeposit(int deposit) {
 				<< "p_amount:" << _amount << ";"
 				<< "deposit:" << deposit << ";";
 
-	_amount += deposit;	//jajoute le depot au compte
-	_totalAmount += deposit; //jajoute le depot au total
-	_nbDeposits++; //jincremente le nbre de depots du compte
-	_totalNbDeposits++; //jincremente le nombre total de depots
+	_amount += deposit;
+	_totalAmount += deposit
+	_nbDeposits++;
+	_totalNbDeposits++;
 
 	std::cout << "amount:" << _amount << ";"
 				<< "nb_deposits:" << _nbDeposits << std::endl;
@@ -121,10 +120,10 @@ bool Account::makeWithdrawal(int withdrawal) {
 		return (false);
 	}
 
-	_amount -= withdrawal;//nqess meno le retrait dial lcompte
-	_totalAmount -= withdrawal;	//nqess le retrait du total
-	_nbWithdrawals++;//jincremente le nombre de retraits du compte
-	_totalNbWithdrawals++;//jincremente le nombre total de retraits
+	_amount -= withdrawal;
+	_totalAmount -= withdrawal;
+	_nbWithdrawals++;
+	_totalNbWithdrawals++;
 
 	std::cout << "withdrawal:" << withdrawal << ";"
 				<< "amount:" << _amount << ";"
