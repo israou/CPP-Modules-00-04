@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:20:39 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/04 21:25:35 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/08 19:04:18 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,16 @@ bool	is_only_digits(const std::string &str)
 	for (size_t i = 0; i < str.length(); i++)
 	{
 		if (!std::isdigit(str[i]))
+			return (false);
+	}
+	return (true);
+}
+
+bool	is_printables(const std::string &str)
+{
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		if (!std::isprint(str[i]))
 			return (false);
 	}
 	return (true);

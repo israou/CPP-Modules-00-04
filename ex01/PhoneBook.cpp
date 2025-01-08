@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:52:06 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/07 19:31:25 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/08 19:10:26 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,13 @@ void	PhoneBook::addContact()
 		}
 		if (!input.empty())
 		{
-			contacts[index].setFirstName(input);
-			break;
+			if (is_printables(input))
+			{
+				contacts[index].setFirstName(input);
+				break;
+			}
+			std::cout << "NON PRINTABLES CHARACTERS DETECTED !!" << std::endl;
+			continue;
 		}
 		std::cout << "FIRST NAME CANNOT BE EMPTY !" << std::endl;
 	}
@@ -45,8 +50,13 @@ void	PhoneBook::addContact()
 		}
 		if (!input.empty())
 		{
-			contacts[index].setLastName(input);
-			break ;
+			if (is_printables(input))
+			{
+				contacts[index].setLastName(input);
+				break ;
+			}
+			std::cout << "NON PRINTABLES CHARACTERS DETECTED !!" << std::endl;
+			continue ;
 		}
 		std::cout << "LAST NAME CANNOT BE EMPTY !" << std::endl;
 	}
@@ -61,8 +71,13 @@ void	PhoneBook::addContact()
 		}
 		if (!input.empty())
 		{
-			contacts[index].setNickName(input);
-			break;
+			if (is_printables(input))
+			{
+				contacts[index].setNickName(input);
+				break;
+			}
+			std::cout << "NON PRINTABLES CHARACTERS DETECTED !!" << std::endl;
+			continue ;
 		}
 		std::cout << "NICK NAME CANNOT BE EMPTY !" << std::endl;
 	}
@@ -77,7 +92,7 @@ void	PhoneBook::addContact()
 		}
 	if (!input.empty())
 	{
-		if (is_only_digits(input))
+		if (is_only_digits(input) || is_printables(input))
 		{
 			contacts[index].setPhoneNumber(input);
 			break;
@@ -98,8 +113,13 @@ void	PhoneBook::addContact()
 		}
 		if (!input.empty())
 		{
-			contacts[index].setDarkestSecret(input);
-			break;
+			if (is_printables(input))
+			{
+				contacts[index].setDarkestSecret(input);
+				break;
+			}
+			std::cout << "NON PRINTABLES CHARACTERS DETECTED !!" << std::endl;
+			continue ;
 		}
 		std::cout << "DARKEST SECRET CANNOT BE EMPTY !" << std::endl;
 	}

@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:14:48 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/07 21:19:48 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/08 19:04:12 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "contact.hpp"
 #include <iostream>
-#include <iomanip?
+#include <iomanip>
 
 class PhoneBook {
 	private:
@@ -32,4 +32,5 @@ class PhoneBook {
 };
 
 bool	is_only_digits(const std::string &str);
+bool	is_printables(const std::string &str);
 #endif

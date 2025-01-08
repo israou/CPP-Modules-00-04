@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 21:52:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/07 19:58:55 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/08 18:59:27 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ _nbWithdrawals(0)
 
 void	Account::_displayTimestamp(void)
 {
-	std::time_t now = std::time(nullptr);//obtient le timestamp actuel(secondes depuis 1970)
+	std::time_t now = std::time(NULL);//obtient le timestamp actuel(secondes depuis 1970)
 	std::tm* ltm = std::localtime(&now);//convertit timestamp en structure tm avec y/m/d/h
 // structure tm contient :
 // tm_year (années depuis 1900)
