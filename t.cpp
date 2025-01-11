@@ -21,33 +21,91 @@
 //--------==============------------------
 
 
-void	byPtr(std::string* str)
+// void	byPtr(std::string* str)
+// {
+// 	*str += " and ho";
+// }
+
+// void	byConstPtr(std::string const * str)
+// {
+// 	std::cout << *str << std::endl;
+// }
+
+// void	byRef(std::string& str)
+// {
+// 	str += " and ouis";
+// }
+
+// void	byConstRef(std::string const & str)
+// {
+// 	std::cout << str << std::endl;
+// }
+
+// int main()
+// {
+// 	std::string str = " i love robio";
+
+// 	std::cout << str << std::endl;
+// 	byPtr(&str);
+// 	byConstPtr(&str);
+
+// 	str = "i love me";
+// }
+
+//==========-----------==================
+
+
+// int main()
+// {
+// 	int nbr = 42;
+// 	int* ptr = &nbr;
+// 	int& ref = nbr;
+
+// 	std::cout << "ptr: " << ptr << std::endl;
+// 	std::cout << "*ptr: " << *ptr << std::endl;
+// 	std::cout << "ref: " << ref << std::endl;
+// 	std::cout << "&ref: " << &ref << std::endl;
+
+
+
+
+	// nbr *ptr ref nefs la valeur
+	// &nbr ptr &ref nefs l addresse
+	// les références doivent être initialisées à leur déclaration
+	// une référence ne peut pas changer pour référencer une autre variable
+	// pas besoin de symbole spécial pour accéder à la valeur
+// }
+
+using namespace std;
+
+void	modifierValeur(int* pointeur)
 {
-	*str += " and ho";
+	std::cout << "Avant modification (pointeur): " << *pointeur << std::endl;
+	*pointeur = 100;
+	std::cout << "Après modification (pointeur): " << *pointeur << std::endl;
 }
 
-void	byConstPtr(std::string const * str)
+void modifierValeurRef(int& reference)
 {
-	std::cout << *str << std::endl;
-}
-
-void	byRef(std::string& str)
-{
-	str += " and ouis";
-}
-
-void	byConstRef(std::string const & str)
-{
-	std::cout << str << std::endl;
+	std::cout << "Avant modification (reference): " << reference << std::endl;
+	reference = 10;
+	std::cout << "Après modification (reference): " << reference << std::endl;
 }
 
 int main()
 {
-	std::string str = " i love robio";
+	int x = 42;
+	std::cout << "Valeur initiale de x: " << x << std::endl;
 
-	std::cout << str << std::endl;
-	byPtr(&str);
-	byConstPtr(&str);
+	modifierValeur(&x);
+	std::cout << "x après modification par pointeur: " << x << std::endl;
 
-	str = "i love me";
+	modifierValeurRef(x);
+	std::cout << "x après modification par référence: " << x << std::endl;
+
+	return 0;
 }
+// modifierValeur utilise un pointeur : on passe l'adresse de x avec &x
+// modifierValeurRef utilise une référence : on passe directement x
+
+// Les deux approches permettent de modifier la variable originale, mais la syntaxe avec référence est plus simple à lire et à comprendre.
