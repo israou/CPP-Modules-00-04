@@ -19,7 +19,7 @@ $(NAME): $(OBJ)
 	@($(CPP) $(OBJ) $(CFLAGS) -o $(NAME))
 	@echo "✅ $(NAME) is ready !"
 
-%.o : %.cpp
+%.o : %.cpp HumanA.hpp HumanB.hpp Weapon.hpp
 	@($(CPP) $(CFLAGS) -c $< -o $@)
 
 clean:

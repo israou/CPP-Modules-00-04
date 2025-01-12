@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 21:43:13 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/11 22:42:29 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/11 22:59:20 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ int main(int ac, char **av)
 		{
 			found = true;
 			line = line.substr(0, pos) + s2 + line.substr(pos + s1.length());
-			pos += s2.length();
+			pos += s2.length();//je fai savancer la position apres remplacement
 		}
-		outFile << line;
+		outFile << line;//ecrit la ligne modifiee
 		if (!inFile.eof())
 			outFile << std::endl;
 	}
