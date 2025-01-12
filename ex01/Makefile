@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRC =	contact.cpp \
+SRC =	Contact.cpp \
 		PhoneBook.cpp \
 		main.cpp
 
@@ -18,7 +18,7 @@ $(NAME): $(OBJ)
 	@($(CPP) $(OBJ) $(CFLAGS) -o $(NAME))
 	@echo "✅ $(NAME) is ready !"
 
-%.o : %.cpp
+%.o : %.cpp PhoneBook.hpp Contact.hpp
 	@($(CPP) $(CFLAGS) -c $< -o $@)
 
 clean:

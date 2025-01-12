@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:06:57 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/12/24 02:20:52 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/12 19:48:19 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Contact {
 		void	setPhoneNumber(std:: string str);
 		void	setDarkestSecret(std:: string str);
 
-		std::string getFirstName() const;//const veut dire cette fonction ne modifiera aucun attribut de la classe(objet)
+		std::string getFirstName() const;
 		std::string getLastName() const;
 		std::string getNickName() const;
 		std::string getPhoneNumber() const;

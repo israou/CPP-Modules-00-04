@@ -6,11 +6,11 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:20:39 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/08 19:04:18 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/12 23:06:40 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 bool	is_only_digits(const std::string &str)
 {

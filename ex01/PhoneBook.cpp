@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:52:06 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/08 19:10:26 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/12 23:07:29 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	PhoneBook::addContact()
 		}
 	if (!input.empty())
 	{
-		if (is_only_digits(input) || is_printables(input))
+		if (is_only_digits(input))
 		{
 			contacts[index].setPhoneNumber(input);
 			break;
