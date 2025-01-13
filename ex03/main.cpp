@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 20:47:21 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/11 21:35:28 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/13 03:30:29 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main()
 {
 	{
-		Weapon  club = Weapon("crude spiked club");
+		Weapon club = Weapon("crude spiked club");
 
 		HumanA ROBIO("ROBIO", club);
 		ROBIO.attack();

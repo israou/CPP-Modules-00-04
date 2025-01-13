@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/10 19:42:36 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/13 19:48:30 by ichaabi          ###   ########.fr       */
+/*   Created: 2025/01/13 22:03:19 by ichaabi           #+#    #+#             */
+/*   Updated: 2025/01/13 22:05:19 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-Zombie::Zombie(std::string name) : name(name)
+int main(int ac, char **av)
 {
-	std::cout << name << " zombie is created" << std::endl;
+	if (ac != 2)
+	{
+		std::cerr << "Usage: ./harlFilter <level>" << std::endl;
+		return (1);
+	}
+	Harl harl;
+	harl.complain(av[1]);
+	return (0);
 }
-
-Zombie::~Zombie(void)
-{
-	std::cout << name << " is destroyed" << std::endl;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-
-
