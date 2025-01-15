@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 21:28:30 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/10 21:30:25 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/15 22:09:14 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
 	int N = 5;
-	Zombie* horde = zombieHorde(N, "Bob");
+	Zombie* horde = zombieHorde(N, "Robio");
 	if (!horde)
 	{
 		std::cerr << "Failed to create zombie horde" << std::endl;

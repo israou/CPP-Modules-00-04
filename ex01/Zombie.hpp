@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 20:24:19 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/10 21:43:46 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/15 22:08:29 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ class Zombie
 	private:
 		std::string name;
 	public:
-		Zombie();//constructeur par default pour le tableau de zombie sans nom
-		Zombie(std::string name);//constructeur pour le zombie avec nom
+		Zombie();
 		~Zombie(void);
 		void	setName(std::string name);
 		void	announce(void);
