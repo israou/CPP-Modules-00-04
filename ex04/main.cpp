@@ -6,12 +6,12 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 21:43:13 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/13 03:29:30 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/15 23:51:52 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <fstream> //operations sur les fichiers
+#include <fstream>
 #include <string>
 
 int main(int ac, char **av)
@@ -32,7 +32,7 @@ int main(int ac, char **av)
 		return (1);
 	}
 
-	std::ifstream inFile(filename.c_str());//jouvre le fichier
+	std::ifstream inFile(filename);
 	if (!inFile.is_open())
 	{
 		std::cerr << "Error: Cannot open file: " << filename << std::endl;
@@ -41,7 +41,7 @@ int main(int ac, char **av)
 
 
 	std::string outfilename = filename + ".replace";
-	std::ofstream outFile(outfilename.c_str());//classe pour ecrire dans mon fichier
+	std::ofstream outFile(outfilename);
 	if (!outFile.is_open())
 	{
 		std::cerr << "Error: Cannot create file: " << outfilename << std::endl;
@@ -50,18 +50,19 @@ int main(int ac, char **av)
 	}
 
 	bool found =false;
-	std::string line;//je vais stocker chaque ligne du fichier
+	std::string line;
 
 	while (std::getline(inFile, line))
 	{
-		size_t pos = 0;//position ou je commence a rechercher s1 dans la ligne
-		while ((pos = line.find(s1, pos)) != std::string::npos)//npos hya malqash
+		size_t pos = 0;
+		while ((pos = line.find(s1, pos)) != std::string::npos)
 		{
 			found = true;
-			line = line.substr(0, pos) + s2 + line.substr(pos + s1.length());
-			pos += s2.length();//je fai savancer la position apres remplacement
+			line.erase(pos, s1.length());
+			line.insert(pos, s2);
+			pos += s2.length();
 		}
-		outFile << line;//ecrit la ligne modifiee
+		outFile << line;
 		if (!inFile.eof())
 			outFile << std::endl;
 	}

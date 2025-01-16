@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 20:24:19 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/15 22:08:29 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/16 03:41:28 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ class Zombie
 		void	setName(std::string name);
 		void	announce(void);
 };
-
 Zombie*	zombieHorde(int N, std::string name);
 #endif

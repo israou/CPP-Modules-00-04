@@ -6,28 +6,19 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:27:59 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/13 21:44:15 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/16 04:26:47 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main()
+int main(int ac, char **av)
 {
+	if (ac != 2)
+	{
+		std::cerr << "Usage: ./Harl2.0 [DEBUG/INFO/WARNING/ERROR]" << std::endl;
+		return (1);
+	}
 	Harl harl;
-
-	std::cout << "\nDEBUG level:\n" << std::endl;
-	harl.complain("DEBUG");
-
-	std::cout << "\nINFO level:\n" << std::endl;
-	harl.complain("INFO");
-
-	std::cout << "\nWARNING level:\n" << std::endl;
-	harl.complain("WARNING");
-
-	std::cout << "\nERROR level:\n" << std::endl;
-	harl.complain("ERROR");
-
-	std::cout << "\nINVALID level!\n" << std::endl;
-	harl.complain("INVALID");
+	(harl.complain)(av[1]);
 }

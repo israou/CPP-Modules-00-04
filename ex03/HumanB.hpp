@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 20:38:09 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/11 20:40:58 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/16 03:43:13 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class	HumanB
 {
 	private:
 		std::string	name;
-		Weapon*		weapon;//Pointeur car HumanB peut ne pas avoir d'arme
+		Weapon*		weapon;
 	public:
 		HumanB(std::string name);
 		~HumanB();

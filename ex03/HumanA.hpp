@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 20:20:02 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/11 21:35:00 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/16 03:42:49 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class HumanA
 {
 	private:
 		std::string	name;
-		Weapon&		weapon;//ref car humanA doit toujours avoir une arme
+		Weapon&		weapon;
 	public:
 		HumanA(std::string name, Weapon& weapon);
 		~HumanA();

@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 21:28:30 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/15 22:09:14 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/16 03:47:20 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	int N = 5;
+	int N = -8;
 	Zombie* horde = zombieHorde(N, "Robio");
 	if (!horde)
 	{

@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:20:54 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/13 21:49:48 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/16 04:36:35 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Harl::Harl()
 {
-	std::cout << "constructeur appelé" << std::endl;
+	std::cout << "\n===CONSTRUCTOR CALLED===\n" << std::endl;
 }
 
 Harl::~Harl()
 {
-	std::cout << "destructeur appelé" << std::endl;
+	std::cout << "\n===DESTRUCTOR CALLED===\n" << std::endl;
 }
 
 void	Harl::debug(void)
@@ -44,6 +44,7 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
+	bool	found = false;
 	void(Harl::*functions[])(void) = {//tableau de pointeurs sur fonctions : harl::* -> pointeur sur membre de la classe
 		&Harl::debug,
 		&Harl::info,
@@ -55,7 +56,15 @@ void	Harl::complain(std::string level)
 	for (int i = 0; i < 4; i++)
 	{
 		if (levels[i] == level)
+		{
+			found = true;
 			(this->*functions[i])();//appelle la fonction membre correspondante
+			break ;
+		}
+	}
+	if (!found)
+	{
+		std::cerr << "[ Invalid level: " << level << " ]" << std::endl;
 	}
 }
 
