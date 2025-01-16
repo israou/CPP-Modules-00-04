@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:20:54 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/16 04:36:35 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/16 04:46:46 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	Harl::error(void)
 void	Harl::complain(std::string level)
 {
 	bool	found = false;
-	void(Harl::*functions[])(void) = {//tableau de pointeurs sur fonctions : harl::* -> pointeur sur membre de la classe
+	void(Harl::*functions[])(void) = {
 		&Harl::debug,
 		&Harl::info,
 		&Harl::warning,
@@ -58,7 +58,7 @@ void	Harl::complain(std::string level)
 		if (levels[i] == level)
 		{
 			found = true;
-			(this->*functions[i])();//appelle la fonction membre correspondante
+			(this->*functions[i])();
 			break ;
 		}
 	}
@@ -67,20 +67,3 @@ void	Harl::complain(std::string level)
 		std::cerr << "[ Invalid level: " << level << " ]" << std::endl;
 	}
 }
-
-//fash aneeyet ela harl.complain("DEBUG") fl main
-//lprogramm:
-//cherche "DEBUG" dans le tableau levels
-//trouve l'index (0)
-//execute la fonction correspondante dans functions[0] li hya debug...
-
-
-// Le & est nécessaire car :
-// On créé un tableau de pointeurs sur fonctions membres
-// Pour avoir un pointeur, on a besoin de l'adresse de la fonction
-// &Harl::debug signifie "l'adresse de la fonction debug de la classe Harl"
-
-
-// this->* est l'opérateur pour accéder à un pointeur sur membre
-// On ne peut pas juste faire functions[i]() car il faut spécifier sur quelle instance de Harl appeler la fonction
-// this fait référence à l'instance courante de Harl

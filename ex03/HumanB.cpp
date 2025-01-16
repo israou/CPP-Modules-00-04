@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 20:30:00 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/15 23:13:08 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/16 04:50:44 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ HumanB::~HumanB()
 	std::cout << "Destructeur HumanB called" << std::endl;
 }
 
-void	HumanB::setWeapon(Weapon& weapon)//ref pour s assurer que l arme existe(reeellle)pas sa copie
+void	HumanB::setWeapon(Weapon& weapon)
 {
-	this->weapon = &weapon;//j equipe mon robio d une arme(je stocke l adresse de l arme)
+	this->weapon = &weapon;
 }
 
 void	HumanB::attack()

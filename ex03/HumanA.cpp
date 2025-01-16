@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 20:31:57 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/11 21:16:42 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/16 04:50:08 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 HumanA::HumanA(std::string name, Weapon& weapon) : name(name), weapon(weapon)
 {
-	std::cout<< "Constructeur humanA called" << std::endl;
+	std::cout<< "Constructor humanA called" << std::endl;
 }
 
 HumanA::~HumanA()
 {
-	std::cout << "Destructeur HumanA called"<<std::endl;
+	std::cout << "Destructor HumanA called"<<std::endl;
 }
 
 void	HumanA::attack()

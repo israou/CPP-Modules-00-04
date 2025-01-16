@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:53:47 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/16 04:08:38 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/16 04:51:54 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	Harl::complain(std::string level)
 	int i;
 	for (i = 0; i < 4; i++)
 	{
-		if (levels[i] == level)//expression == constanste
+		if (levels[i] == level)
 			break;
 	}
 

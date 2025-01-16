@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 20:07:23 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/11 20:15:26 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/16 04:46:58 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Weapon
 	public:
 		Weapon(std::string type);
 		~Weapon();
-		const std::string& getType()const;//retourne une ref constante sur type
+		const std::string& getType()const;
 		void	setType(std::string type);
 };
 
