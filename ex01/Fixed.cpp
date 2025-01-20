@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:06:03 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/20 11:22:46 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/20 11:33:37 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ float	Fixed::toFloat(void)const
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 {
-	out << fixed.toFloat();
+	out << fixed.toFloat();//affiche la version float du nbr
 	return (out);
 }
 
@@ -90,3 +90,12 @@ int Fixed::toInt(void) const
 // std::cout << a;
 // std::cout << a << " est un nombre" << std::endl;
 // comme si on disait à C++ : "Quand tu vois <<, voici comment afficher un Fixed"
+
+
+//  C++ sait afficher des types basiques comme :
+
+// int : std::cout << 42;
+// float : std::cout << 42.42f;
+// string : std::cout << "Hello";
+
+// Mais il ne sait pas comment afficher notre classe Fixed car c'est un type personnalisé qu'on a créé. C++ ne sait pas quelle valeur il doit afficher : _value ? _bits ? Autre chose ?
