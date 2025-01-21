@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 04:37:37 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/20 11:33:08 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/21 14:23:16 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
-	// this->_value = other._value;
 }
 //cree une copie d un objet existant
 //other ref vers l objet quon veut copier

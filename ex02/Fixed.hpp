@@ -5,17 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 10:57:32 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/21 15:33:14 by ichaabi          ###   ########.fr       */
+/*   Created: 2025/01/21 15:18:42 by ichaabi           #+#    #+#             */
+/*   Updated: 2025/01/21 16:40:31 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-#include <iostream>
-#include <string>
-#include <cmath>
+# include <iostream>
 
 class	Fixed
 {
@@ -24,23 +22,40 @@ class	Fixed
 		static const int _bits = 8;
 	public :
 		Fixed();
-		Fixed(const Fixed& other);
-		~Fixed();
-
+		Fixed(const Fixed &other);
 		Fixed(const int n);
 		Fixed(const float n);
+		~Fixed();
 
-		Fixed& operator=(const Fixed& other);
+		Fixed&	operator=(const Fixed& other);
+
+		bool	operator>(const Fixed& other)const;
+		bool	operator<(const Fixed& other)const;
+		bool	operator>=(const Fixed& other)const;
+		bool	operator<=(const Fixed& other)const;
+		bool	operator==(const Fixed& other)const;
+		bool	operator!=(const Fixed& other)const;
+
+		Fixed	operator+(const Fixed& other)const;
+		Fixed	operator-(const Fixed& other)const;
+		Fixed	operator*(const Fixed& other)const;
+		Fixed	operator/(const Fixed& other)const;
+
+		Fixed& operator++();
+		Fixed operator++(int);
+		Fixed& operator--();
+		Fixed operator--(int);
 
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
 
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
-};
 
+		static Fixed&		min(Fixed& a, Fixed& b);
+		static const Fixed&	min(const Fixed& a, const Fixed& b);
+		static Fixed&		max(Fixed& a, Fixed& b);
+		static const Fixed&	max(const Fixed& a, const Fixed& b);
+};
 std::ostream&	operator<<(std::ostream& out, const Fixed& fixed);
-//une surcharge de l’opérateur d’insertion («)
-//qui insère une représentation en virgule flottante du nombre à virgule fixe
-//dans le flux de sortie (objet output stream) passé en paramètre.
 #endif

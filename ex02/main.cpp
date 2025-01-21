@@ -5,22 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 04:37:44 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/21 14:20:10 by ichaabi          ###   ########.fr       */
+/*   Created: 2025/01/21 16:16:16 by ichaabi           #+#    #+#             */
+/*   Updated: 2025/01/21 17:05:52 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main()
+int	main( void )
 {
-	Fixed a;//constructeur de defaut
-	a.setRawBits(42);
-	Fixed b( a );//b copie de a, donc a devient other
-	Fixed c;//const de defaut
-	c = b;//constructeur de copie quand on passe a objet par valeur a une fonction, b devient other
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 	return 0;
 }

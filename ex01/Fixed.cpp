@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:06:03 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/20 11:33:37 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/21 14:49:54 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
-	// this->_value = other._value;
 }
 
 Fixed::~Fixed()
@@ -49,6 +48,11 @@ Fixed::Fixed(const float n)
 	this->_value = roundf(n * (1 << _bits));//* 256 et arrondit
 }
 
+int Fixed::toInt(void) const
+{
+	return (this->_value >> _bits);//8 bits vers la droite
+}
+
 float	Fixed::toFloat(void)const
 {
 	return ((float)this->_value / (1 << _bits));//diviser par 256
@@ -58,7 +62,7 @@ std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 {
 	out << fixed.toFloat();//affiche la version float du nbr
 	return (out);
-}
+}//divise la valeur par 256 
 
 int	Fixed::getRawBits(void)const
 {
@@ -71,10 +75,6 @@ void	Fixed::setRawBits(int const raw)
 	this->_value = raw;
 }
 
-int Fixed::toInt(void) const
-{
-	return (this->_value >> _bits);//8 bits vers la droite
-}
 // int x = 5;
 // std::cout << x << std::endl; --> ca marche car c++ sait comment afficher un int
 
