@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 04:37:44 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/21 14:20:10 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/22 15:44:35 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int main()
 {
-	Fixed a;//constructeur de defaut
-	a.setRawBits(42);
-	Fixed b( a );//b copie de a, donc a devient other
-	Fixed c;//const de defaut
-	c = b;//constructeur de copie quand on passe a objet par valeur a une fonction, b devient other
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+	c = b;
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;

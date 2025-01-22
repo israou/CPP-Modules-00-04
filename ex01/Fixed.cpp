@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:06:03 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/21 14:49:54 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/22 15:45:39 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed::~Fixed()
 Fixed& Fixed::operator=(const Fixed& other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != & other)//verifier qu on ne copie pas l objet sur lui meme
+	if (this != & other)
 		this->_value = other.getRawBits();
 	return (*this);
 }
@@ -39,34 +39,33 @@ Fixed& Fixed::operator=(const Fixed& other)
 Fixed::Fixed(const int n)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_value = n << _bits;//decaler de 8 bits vers la gauche
+	this->_value = n << _bits;
 }
 
 Fixed::Fixed(const float n)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_value = roundf(n * (1 << _bits));//* 256 et arrondit
+	this->_value = roundf(n * (1 << _bits));
 }
 
 int Fixed::toInt(void) const
 {
-	return (this->_value >> _bits);//8 bits vers la droite
+	return (this->_value >> _bits);
 }
 
 float	Fixed::toFloat(void)const
 {
-	return ((float)this->_value / (1 << _bits));//diviser par 256
+	return (static_cast<float>(this->_value) / (1 << _bits));
 }
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 {
-	out << fixed.toFloat();//affiche la version float du nbr
+	out << fixed.toFloat();
 	return (out);
-}//divise la valeur par 256 
+}
 
 int	Fixed::getRawBits(void)const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_value);
 }
 
@@ -74,28 +73,3 @@ void	Fixed::setRawBits(int const raw)
 {
 	this->_value = raw;
 }
-
-// int x = 5;
-// std::cout << x << std::endl; --> ca marche car c++ sait comment afficher un int
-
-// Fixed a(5);
-// std::cout << a << std::endl; --> erreur ! c++ ne sait as comment afficher un fixed
-
-// !!solution!! --> surcharge de <<
-// std::ostream& out : c est l objet qui gere la sortie
-// const Fixed& fixed : le nbre a virgule fixe
-// return out : chaines les <<
-
-// Fixed a(5.5f);
-// std::cout << a;
-// std::cout << a << " est un nombre" << std::endl;
-// comme si on disait à C++ : "Quand tu vois <<, voici comment afficher un Fixed"
-
-
-//  C++ sait afficher des types basiques comme :
-
-// int : std::cout << 42;
-// float : std::cout << 42.42f;
-// string : std::cout << "Hello";
-
-// Mais il ne sait pas comment afficher notre classe Fixed car c'est un type personnalisé qu'on a créé. C++ ne sait pas quelle valeur il doit afficher : _value ? _bits ? Autre chose ?

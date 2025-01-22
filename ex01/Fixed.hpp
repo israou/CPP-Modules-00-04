@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 10:57:32 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/21 15:33:14 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/22 15:47:55 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FIXED_HPP
 
 #include <iostream>
-#include <string>
 #include <cmath>
 
 class	Fixed
@@ -38,9 +37,5 @@ class	Fixed
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
 };
-
 std::ostream&	operator<<(std::ostream& out, const Fixed& fixed);
-//une surcharge de l’opérateur d’insertion («)
-//qui insère une représentation en virgule flottante du nombre à virgule fixe
-//dans le flux de sortie (objet output stream) passé en paramètre.
 #endif
