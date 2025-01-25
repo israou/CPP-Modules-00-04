@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 20:08:58 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/25 20:27:17 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 00:04:23 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int main()
 {
 	{
-		ScavTrap scav("Serena");
+		ScavTrap scav("Athena");
 
-		scav.attack("enemy");
+		scav.attack("Robofox");
 		scav.takeDamage(50);
 		scav.beRepaired(30);
 		scav.guardGate();
