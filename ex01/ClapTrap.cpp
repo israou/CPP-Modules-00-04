@@ -1,12 +1,12 @@
 /* ************************************************************************** */
-/*                                                                    */
+/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 23:44:23 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/25 00:56:10 by ichaabi          ###   ########.fr       */
+/*   Created: 2025/01/25 17:00:53 by ichaabi           #+#    #+#             */
+/*   Updated: 2025/01/25 20:36:21 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,24 +59,31 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (_hitPoints <= amount)
 		_hitPoints = 0;
 	else
+	std::cout << "_hitPoints --------------->: " << _hitPoints << std::endl;
 		_hitPoints -= amount;
+	std::cout << "_hitPoints --------------->: " << _hitPoints << std::endl;
+	std::cout << "amount --------------->: " << amount << std::endl;
 	std::cout<< "ClapTrap " << _name << " takes " << amount << " damage! HP left: " << _hitPoints << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
+	std::cout << "_energyPoints======>> " << _energyPoints << std::endl;
+	std::cout << "_hitPoints======>> " << _hitPoints << std::endl;
 	if (_energyPoints == 0 || _hitPoints == 0)
 	{
 		std::cout << "ClapTrap " << _name << " can't repair: no energy or hit points left!" << std::endl;
 		return ;
 	}
-	// if (_hitPoints + amount < _hitPoints)
-	// {
-	// 	std::cout << "Error: Hit points would overflow!" << std::endl;
-	// 	return ;
-	// }
+	std::cout << "_hitPoints====****==>> " << _hitPoints << std::endl;
+	std::cout << "amount==****====>> " << amount << std::endl;
+	std::cout << "_energyPoints======>> " << _energyPoints << std::endl;
+
 	_hitPoints += amount;
 	_energyPoints--;
+	std::cout << "_hitPoints====****==>> " << _hitPoints << std::endl;
+	std::cout << "amount==****====>> " << amount << std::endl;
+	std::cout << "_energyPoints======>> " << _energyPoints << std::endl;
 	std::cout << "ClapTrap " << _name << " repairs itself for " << amount
 			<< " HP! Current HP: " << _hitPoints << std::endl;
 }

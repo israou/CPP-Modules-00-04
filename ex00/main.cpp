@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 00:38:41 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/25 01:10:30 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/25 20:30:53 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,18 @@ int main()
 {
 	ClapTrap robot("ROBIO_2.0");
 
-	//t1: Dépasser la limite d'énergie
+	//t1:depasser la limite denergie
 	for(int i = 0; i < 11; i++)
 	{
-		robot.attack("enemy"); // Au 11ème appel: pas assez d'énergie
+		robot.attack("enemy"); // 11eme appel pas assez d energie
 	}
-
-	//t2: Points de vie à 0
+	std::cout << "" << std::endl;
+	//t2:points de vie à 0
 	robot.takeDamage(15);//hp a 0
 	robot.beRepaired(5);//ne peut pas se reparer pske HP = 0
 
-	//t3: overflow des points de vie
+	std::cout << "" << std::endl;
+	//t3:overflow des points de vie
 	ClapTrap robot2("ROBIO_3.0");
 	robot2.beRepaired(UINT_MAX); // Erreur: dépassement maximum
 }
