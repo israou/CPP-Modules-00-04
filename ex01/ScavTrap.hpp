@@ -6,14 +6,13 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 17:19:38 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/25 20:11:56 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 22:21:50 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-# include <iostream>
 # include "ClapTrap.hpp"
 
 class	ScavTrap : public ClapTrap

@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 17:25:05 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/26 21:03:20 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 22:21:34 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,6 @@ void	ScavTrap::attack(const std::string& target)
 	else
 		std::cout << "ScavTrap " << _name << " can't attack: no energy or hit points left!" << std::endl;
 }
-// Chaque type de robot doit afficher son propre type quand il attaque
-// ScavTrap est une sous-classe différente avec sa propre identité
-// Le message doit refléter quel type de robot fait l'attaque
 
 void ScavTrap::guardGate()
 {

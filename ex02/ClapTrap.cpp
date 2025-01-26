@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 23:53:09 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/26 21:53:14 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 22:22:42 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
 	}
 	return (*this);
 }
-
 
 void	ClapTrap::attack(const std::string& target)
 {

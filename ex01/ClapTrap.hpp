@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 17:00:45 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/25 17:35:27 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 22:21:00 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <climits>
 class	ClapTrap
 {
-	//***//au lieu de privé welaw protected
 	protected:
 		std::string	_name;
 		unsigned	int	_hitPoints;

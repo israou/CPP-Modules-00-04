@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 00:14:32 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/26 21:22:21 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 22:24:42 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,3 @@ class	FragTrap : virtual public ClapTrap
 		void highFivesGuys(void);
 };
 # endif
-
-//Le mot-clé virtual évite que DiamondTrap hérite de deux copies de ClapTrap
-//  pour éviter la duplication des membres de ClapTrap
-// Une seule copie de ClapTrap::_name partagée entre ScavTrap et FragTrap

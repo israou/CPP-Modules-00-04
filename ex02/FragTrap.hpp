@@ -6,14 +6,13 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 20:43:03 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/26 21:04:44 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 22:23:04 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
-#include <iostream>
 #include "ClapTrap.hpp"
 
 

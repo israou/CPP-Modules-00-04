@@ -6,14 +6,13 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 00:15:40 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/26 00:34:12 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 22:25:12 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-# include <iostream>
 # include "ClapTrap.hpp"
 
 class	ScavTrap : virtual public ClapTrap
@@ -28,6 +27,3 @@ class	ScavTrap : virtual public ClapTrap
 		void attack(const std::string& target);
 };
 #endif
-
-//Le mot-clé virtual évite que DiamondTrap hérite de deux copies de ClapTrap
-//  pour éviter la duplication des membres de ClapTrap

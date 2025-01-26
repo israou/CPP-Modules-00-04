@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 20:44:27 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/26 21:03:44 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 22:22:52 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <climits>
+
 class	ClapTrap
 {
 	protected:

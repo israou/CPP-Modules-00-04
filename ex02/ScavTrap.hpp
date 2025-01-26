@@ -6,14 +6,13 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 23:53:47 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/25 23:53:49 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 22:23:46 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-# include <iostream>
 # include "ClapTrap.hpp"
 
 class	ScavTrap : public ClapTrap
@@ -27,4 +26,5 @@ class	ScavTrap : public ClapTrap
 		void guardGate();
 		void attack(const std::string& target);
 };
+
 #endif
