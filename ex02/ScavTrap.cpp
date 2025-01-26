@@ -6,13 +6,12 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 23:53:27 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/25 23:53:33 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 21:04:36 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-//*****/ initialisation list!
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	_hitPoints = 100;
@@ -26,13 +25,11 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap " << _name << " is destroyed!" << std::endl;
 }
 
-//** kan zid ghir ClapTrap(other)
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
 	std::cout << "ScavTrap " << _name << " is copied!" << std::endl;
 }
 
-//***//
 ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
 {
 	std::cout << "copy assignement is called" << std::endl;
@@ -43,7 +40,6 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
 	return (*this);
 }
 
-//***///nefs la fonction gha lclasse likatbedel
 void	ScavTrap::attack(const std::string& target)
 {
 	if (_energyPoints > 0 && _hitPoints > 0)
@@ -55,9 +51,6 @@ void	ScavTrap::attack(const std::string& target)
 	else
 		std::cout << "ScavTrap " << _name << " can't attack: no energy or hit points left!" << std::endl;
 }
-// Chaque type de robot doit afficher son propre type quand il attaque
-// ScavTrap est une sous-classe différente avec sa propre identité
-// Le message doit refléter quel type de robot fait l'attaque
 
 void ScavTrap::guardGate()
 {

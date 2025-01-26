@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 00:13:57 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/26 00:14:02 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 21:54:30 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
 	return (*this);
 }
 
-
 void	ClapTrap::attack(const std::string& target)
 {
 	if (_energyPoints > 0 && _hitPoints > 0)
@@ -59,31 +58,19 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (_hitPoints <= amount)
 		_hitPoints = 0;
 	else
-	std::cout << "_hitPoints --------------->: " << _hitPoints << std::endl;
 		_hitPoints -= amount;
-	std::cout << "_hitPoints --------------->: " << _hitPoints << std::endl;
-	std::cout << "amount --------------->: " << amount << std::endl;
 	std::cout<< "ClapTrap " << _name << " takes " << amount << " damage! HP left: " << _hitPoints << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "_energyPoints======>> " << _energyPoints << std::endl;
-	std::cout << "_hitPoints======>> " << _hitPoints << std::endl;
 	if (_energyPoints == 0 || _hitPoints == 0)
 	{
 		std::cout << "ClapTrap " << _name << " can't repair: no energy or hit points left!" << std::endl;
 		return ;
 	}
-	std::cout << "_hitPoints====****==>> " << _hitPoints << std::endl;
-	std::cout << "amount==****====>> " << amount << std::endl;
-	std::cout << "_energyPoints======>> " << _energyPoints << std::endl;
-
 	_hitPoints += amount;
 	_energyPoints--;
-	std::cout << "_hitPoints====****==>> " << _hitPoints << std::endl;
-	std::cout << "amount==****====>> " << amount << std::endl;
-	std::cout << "_energyPoints======>> " << _energyPoints << std::endl;
 	std::cout << "ClapTrap " << _name << " repairs itself for " << amount
 			<< " HP! Current HP: " << _hitPoints << std::endl;
 }

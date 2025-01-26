@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 00:15:53 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/26 00:49:35 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 21:48:35 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class	DiamondTrap : public ScavTrap, public FragTrap
+class	DiamondTrap : public FragTrap, public ScavTrap
 {
 	private :
 		std::string name;
@@ -27,6 +27,7 @@ class	DiamondTrap : public ScavTrap, public FragTrap
 		~DiamondTrap();
 
 		void whoAmI();
-		using ScavTrap::attack;
+		void	attack(const std::string& target);
+		// using ScavTrap::attack;
 };
 #endif

@@ -70,11 +70,6 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << _name << " can't repair: no energy or hit points left!" << std::endl;
 		return ;
 	}
-	// if (_hitPoints + amount < _hitPoints)
-	// {
-	// 	std::cout << "Error: Hit points would overflow!" << std::endl;
-	// 	return ;
-	// }
 	_hitPoints += amount;
 	_energyPoints--;
 	std::cout << "ClapTrap " << _name << " repairs itself for " << amount

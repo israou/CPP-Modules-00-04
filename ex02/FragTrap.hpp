@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 20:43:03 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/26 00:01:57 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 21:04:44 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,4 @@ class	FragTrap : public ClapTrap
 		void attack(const std::string& target);
 		void highFivesGuys(void);
 };
-# endif
+#endif

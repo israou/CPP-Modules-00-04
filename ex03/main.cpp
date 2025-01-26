@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 00:44:02 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/26 00:47:51 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 21:47:22 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,14 @@ int main()
 
 	return (0);
 }
+
+// Problème du diamant
+
+
+// Une classe hérite de deux classes qui héritent d'une même classe
+// Solution : héritage virtuel (virtual public)
+// Résolution d'ambiguïté
+// Utiliser using pour choisir la fonction à hériter
+// Spécifier explicitement la classe : BaseClass::member
+// L'héritage virtuel garantit qu'il n'existe qu'une seule instance de la classe de base commune,
+// éliminant ainsi l'ambiguïté.

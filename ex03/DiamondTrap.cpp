@@ -6,15 +6,17 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 00:31:48 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/26 00:49:46 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 21:55:51 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap(std::string name) :
-	ClapTrap(name + "_clap_name"), ScavTrap(name),
-	FragTrap(name), name(name)
+	ClapTrap(name + "_clap_name"), //_name devient kaka_clap_name
+	FragTrap(name),
+	ScavTrap(name),
+	name(name)
 {
 	_hitPoints = FragTrap::_hitPoints;
 	_energyPoints = ScavTrap::_energyPoints;
@@ -28,7 +30,7 @@ DiamondTrap::~DiamondTrap()
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other) :
-	ClapTrap(other), ScavTrap(other), FragTrap(other) //copie a partie other de chaque classe
+	ClapTrap(other),  FragTrap(other) ,ScavTrap(other)//copie a partie other de chaque classe
 {
 	*this = other;//copie les membres specifique
 }
@@ -47,3 +49,14 @@ void	DiamondTrap::whoAmI()
 {
 	std::cout << "I am " << name << " and my ClapTrap name is " << ClapTrap::_name << std::endl;
 }
+void	DiamondTrap::attack(const std::string& target)
+{
+	ScavTrap::attack(target);
+}
+
+
+
+// Une seule instance de ClapTrap est partagée
+// Les attributs (_name, _hitPoints, etc.) n'existent qu'une fois
+// Plus d'ambiguïté quand DiamondTrap accède aux membres de ClapTrap
+// C'est pourquoi on peut faire ClapTrap::_name sans ambiguïté dans whoAmI().
