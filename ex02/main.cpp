@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 23:59:21 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/26 00:06:00 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/26 22:12:24 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,22 @@
 
 int main()
 {
-	FragTrap Frag("ROBISSA");
+	FragTrap warrior("ROBISSA_2.0");
+	FragTrap enemy("NEXUS");
 
-	Frag.attack("NEXUS");
-	Frag.takeDamage(40);
-	Frag.beRepaired(20);
-	Frag.highFivesGuys();
+	warrior.attack("NEXUS");
+	enemy.takeDamage(30);
+
+	enemy.attack("ROBISSA");
+	warrior.takeDamage(30);
+
+	warrior.beRepaired(20);
+	enemy.beRepaired(15);
+
+	warrior.highFivesGuys();
+	enemy.highFivesGuys();
+
+	return (0);
 }
 
 // Le but est de montrer qu'une classe de base (ClapTrap) peut avoir plusieurs classes dérivées différentes (ScavTrap et FragTrap). Chaque classe dérivée :
