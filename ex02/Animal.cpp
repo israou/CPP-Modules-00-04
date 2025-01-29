@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 23:15:41 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/29 17:03:44 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/29 17:38:30 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Animal::Animal() : type("")
 Animal::Animal(const Animal& other) : type(other.type)
 {
 	std::cout << "Animal copy constructor called" << std::endl;
-	// *this = other;
 }
 //initialisation list initialise directement l'attribut
 //*this = other : cree d'abord l'attribut avec sa valeur par défaut, puis le réassigne
@@ -37,11 +36,6 @@ Animal& Animal::operator=(const Animal& other)
 	if (this != & other)
 		type = other.type;
 	return (*this);
-}
-
-void Animal::makeSound() const
-{
-	std::cout << "* Generic animal sound *" << std::endl;
 }
 
 std::string Animal::gettype() const

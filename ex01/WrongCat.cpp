@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 01:44:40 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/29 01:54:04 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/29 17:03:44 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 WrongCat::WrongCat()
 {
 	std::cout << "WrongCat constructor called" << std::endl;
-	Type = "WrongCat";
+	type = "WrongCat";
 }
 
 WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)

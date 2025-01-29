@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 01:25:21 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/29 17:03:44 by ichaabi          ###   ########.fr       */
+/*   Created: 2025/01/29 00:36:45 by ichaabi           #+#    #+#             */
+/*   Updated: 2025/01/29 02:38:02 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include <iostream>
-class	WrongAnimal
+# include "Animal.hpp"
+# include "Brain.hpp"
+
+class	Dog : public Animal
 {
-	protected:
-		std::string	type;
+	private:
+		Brain*	brain;
 	public :
-		WrongAnimal();
-		WrongAnimal(const WrongAnimal& other);
-		virtual ~WrongAnimal();
-		WrongAnimal& operator=(const WrongAnimal& other);
+		Dog();
+		~Dog();
+		Dog(const Dog& other);
+		Dog&	operator=(const Dog& other);
 
-		void makeSound() const;
-		std::string gettype() const;
+		void	makeSound() const;
 };
-
 #endif

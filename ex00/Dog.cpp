@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 00:39:40 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/29 01:46:58 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/29 17:03:44 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Dog::Dog()
 {
 	std::cout << "Dog constructor called" << std::endl;
-	Type = "Dog"; //initialiser le Type hérité de animal
+	type = "Dog"; //initialiser le type hérité de animal
 }
 
 Dog::~Dog()

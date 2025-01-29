@@ -6,18 +6,18 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 01:43:38 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/29 01:55:22 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/29 17:03:44 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : Type("")
+WrongAnimal::WrongAnimal() : type("")
 {
 	std::cout << "WrongAnimal constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& other) : Type(other.Type)
+WrongAnimal::WrongAnimal(const WrongAnimal& other) : type(other.type)
 {
 	std::cout << "WrongAnimal copy constructor called" << std::endl;
 }
@@ -31,7 +31,7 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other)
 {
 	std::cout << "WrongAnimal assignment operator called" << std::endl;
 	if (this != &other)
-		Type = other.Type;
+		type = other.type;
 	return (*this);
 }
 
@@ -40,7 +40,7 @@ void WrongAnimal::makeSound() const
 	std::cout << "* Wrong animal sound *" << std::endl;
 }
 
-std::string WrongAnimal::getType() const
+std::string WrongAnimal::gettype() const
 {
-	return (Type);
+	return (type);
 }

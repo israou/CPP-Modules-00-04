@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 00:55:00 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/29 01:47:12 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/29 17:03:44 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cat::Cat()
 {
 	std::cout << "Cat constructor called" << std::endl;
-	Type = "Cat";
+	type = "Cat";
 }
 
 Cat::~Cat()
