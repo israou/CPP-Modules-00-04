@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 23:36:57 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/29 23:48:36 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/30 22:19:57 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other)
 {
 	if (this != &other)
 	{
-		// Nettoyer les materias existantes
 		for (int i = 0; i < 4; i++)
 		{
 			if (learned[i])
@@ -53,32 +52,29 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other)
 				learned[i] = NULL;
 		}
 	}
-	return *this;
+	return (*this);
 }
 
 void MateriaSource::learnMateria(AMateria* m)
 {
 	if (!m)
-		return;
-
-	// Trouve le premier slot vide
+		return ;
 	for (int i = 0; i < 4; i++)
 	{
 		if (!learned[i])
 		{
 			learned[i] = m;
-			return;
+			return ;
 		}
 	}
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	// Cherche une Materia du type demandé
 	for (int i = 0; i < 4; i++)
 	{
 		if (learned[i] && learned[i]->getType() == type)
 			return learned[i]->clone();
 	}
-	return NULL;
+	return (NULL);
 }

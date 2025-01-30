@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 23:47:35 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/30 00:12:44 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/30 22:17:06 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ class Character : public ICharacter
 {
 	private:
 		std::string name;
-		AMateria* inventory[4];  // Inventaire de 4 slots maximum
+		AMateria* inventory[4];
+		AMateria*	unequipped[100];
+		int			unequippedCount;
 
 	public:
 		Character(std::string const & name);
@@ -28,7 +30,6 @@ class Character : public ICharacter
 		virtual ~Character();
 		Character& operator=(const Character& other);
 
-		// Méthodes de l'interface ICharacter
 		virtual std::string const & getName() const;
 		virtual void equip(AMateria* m);
 		virtual void unequip(int idx);

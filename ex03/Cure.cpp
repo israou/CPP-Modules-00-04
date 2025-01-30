@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 23:08:33 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/30 00:13:19 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/30 22:17:16 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Cure& Cure::operator=(const Cure& other)
 
 AMateria* Cure::clone() const
 {
-	return (new Cure(*this));  // On crée une nouvelle Cure en utilisant le constructeur de copie
+	return (new Cure(*this));
 }
 
 void Cure::use(ICharacter& target)

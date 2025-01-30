@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 02:19:22 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/29 02:23:25 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/30 22:11:54 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,3 @@ Brain& Brain::operator=(const Brain& other)
 	}
 	return (*this);
 }
-

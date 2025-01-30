@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:07:08 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/29 23:48:36 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/30 22:16:23 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <iostream>
 
-//***/
 class	ICharacter;
 
 class	AMateria

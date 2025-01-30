@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 00:55:00 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/29 17:03:44 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/30 22:14:06 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ Cat& Cat::operator=(const Cat& other)
 	if (this != & other)
 	{
 		Animal::operator=(other);
-		delete brain;// On supprime l'ancien cerveau
-		brain = new Brain(*other.brain); // On crée une copie profonde du nouveau cerveau
+		delete brain;
+		brain = new Brain(*other.brain);
 	}
 	return (*this);
 }

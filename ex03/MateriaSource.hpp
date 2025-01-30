@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 23:21:02 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/29 23:48:36 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/30 22:20:10 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class	MateriaSource : public IMateriaSource
 {
 	private :
-		AMateria* learned[4]; //tableau pour stocker jusqu a 4 materia
+		AMateria* learned[4];
 
 	public :
 		MateriaSource();
@@ -29,6 +29,5 @@ class	MateriaSource : public IMateriaSource
 
 		virtual	void	learnMateria(AMateria*);
 		virtual	AMateria* createMateria(std::string const & type);
-};
 
 #endif
