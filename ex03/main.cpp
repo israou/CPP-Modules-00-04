@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 23:38:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/31 01:24:35 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/02/01 00:24:31 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int main()
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
-	me->equip(tmp);
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
