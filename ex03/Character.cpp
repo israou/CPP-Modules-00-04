@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 23:47:45 by ichaabi           #+#    #+#             */
-/*   Updated: 2025/01/30 22:16:55 by ichaabi          ###   ########.fr       */
+/*   Updated: 2025/01/31 01:20:14 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,11 @@ void	Character::equip(AMateria* m)
 {
 	if (!m)
 		return ;
+	for (int i = 0; i < 4; i++)
+	{
+		if (inventory[i] == m)
+			return ;
+	}
 	for (int i = 0; i < 4; i++)
 	{
 		if (!inventory[i])
