@@ -28,7 +28,7 @@ bool	bsp( Point const a, Point const b, Point const c, Point const point)
 
 	Fixed areaPBC = area(point, b, c);
 	Fixed areaPAC = area(a, point, c);
-	Fixed areaPAB = area(a, c, point);
+	Fixed areaPAB = area(a, b, point);
 	if (areaPBC <= 0 || areaPAC <= 0 || areaPAB <= 0)
 	{
 		std::cout << "Point sur une arête ou à l'extérieur (aire négative ou nulle)" << std::endl;
